@@ -40,7 +40,7 @@ Write-Host "[1/5] Force Stopping Java Processes..." -ForegroundColor Yellow
 # Try graceful shutdown first
 $shutdownScript = Join-Path $TomcatHome "bin\shutdown.bat"
 if (Test-Path $shutdownScript) {
-    & cmd /c "$shutdownScript" 2>&1 | Out-Null
+    try { & cmd /c "$shutdownScript" 2>&1 | Out-Null } catch { }
     Start-Sleep -Seconds 2
 }
 
@@ -155,6 +155,11 @@ if (-not $warPath) {
     exit 1
 }
 
+if (-not (Test-Path $WebappsDir)) {
+    New-Item -ItemType Directory -Force -Path $WebappsDir | Out-Null
+    Write-Host "  Created webapps directory" -ForegroundColor Gray
+}
+
 # Copy WAR
 Copy-Item $warPath.FullName $DeployedWar -Force
 Write-Host "  Deployed WAR to webapps" -ForegroundColor Gray
@@ -193,7 +198,7 @@ Write-Host "[5/5] Starting Server and Verifying..." -ForegroundColor Yellow
 $startupScript = Join-Path $TomcatHome "bin\startup.bat"
 $env:CATALINA_HOME = $TomcatHome
 $env:CATALINA_BASE = $TomcatHome
-& cmd /c "$startupScript" 2>&1 | Out-Null
+try { & cmd /c "$startupScript" 2>&1 | Out-Null } catch { }
 
 Write-Host "  Waiting for server to start..." -ForegroundColor Gray
 $maxWait = 30
