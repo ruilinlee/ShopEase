@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.shopease'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Servlet API
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    providedCompile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+
+    // JSTL for JSP templating and XSS protection
+    implementation 'javax.servlet:jstl:1.2'
+
+    // Gson for JSON processing
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // File upload support
+    implementation 'commons-fileupload:commons-fileupload:1.5'
+    implementation 'commons-io:commons-io:2.15.1'
+}
+
+// Ensure data directory exists
+task initData {
+    doLast {
+        file('data').mkdirs()
+        file('uploads').mkdirs()
+    }
+}
+
+war {
+    archiveBaseName = 'shopease'
+}

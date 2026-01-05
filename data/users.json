@@ -1,0 +1,26 @@
+[
+  {
+    "id": "admin-001",
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@shopease.com",
+    "role": "admin",
+    "createdAt": 1703203200000
+  },
+  {
+    "id": "user-001",
+    "username": "john_doe",
+    "password": "pass123",
+    "email": "john@example.com",
+    "role": "customer",
+    "createdAt": 1703289600000
+  },
+  {
+    "id": "user-002",
+    "username": "jane_smith",
+    "password": "pass123",
+    "email": "jane@example.com",
+    "role": "customer",
+    "createdAt": 1703376000000
+  }
+]

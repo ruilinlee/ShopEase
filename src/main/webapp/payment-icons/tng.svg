@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60">
+  <rect width="100" height="60" rx="8" fill="#005ABB"/>
+  <rect x="8" y="12" width="36" height="36" rx="8" fill="#FFF"/>
+  <text x="12" y="35" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#005ABB">TNG</text>
+  <text x="50" y="25" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#FFF">Touch 'n Go</text>
+  <text x="50" y="38" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFF">eWallet</text>
+</svg>

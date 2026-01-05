@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60">
+  <rect width="100" height="60" rx="8" fill="#FFC72C"/>
+  <path d="M15 30 L25 15 L35 30 L25 25 Z" fill="#000"/>
+  <path d="M30 30 L40 15 L50 30 L40 25 Z" fill="#000"/>
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#000">MAYBANK</text>
+  <text x="55" y="47" font-family="Arial, sans-serif" font-size="8" fill="#333">Online Banking</text>
+</svg>
